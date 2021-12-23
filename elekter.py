@@ -34,10 +34,10 @@ counter=0
 price=[]
 hour=[]
 for val in text:
-    counter+=1
     if len(hour)==24:
         break
     if val[0].isnumeric():
+        counter+=1
         if counter%2==0:
             hour.append(int(val))
         else:
