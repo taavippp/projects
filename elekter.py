@@ -46,8 +46,14 @@ for i,val in enumerate(price):
     if str(val).find(".0")!=-1:
         price[i]=int(val)
 
-print("Järjekorras madalamaist kõrgeimani.")
-lowest=multiple_min(price,amt)
-for val in lowest:
-    hour_val=hour[price.index(val)]
-    print("Kell {}-{}: \t{} €".format(hour_val,hour_val+1,val))
+def output():
+    lowest=multiple_min(price,amt)
+    for val in lowest:
+        hour_val=hour[price.index(val)]
+        print("Kell {}-{}: \t{} €".format(hour_val,hour_val+1,val))
+    return
+
+output()
+while True:
+    amt=int(input("Mitu madalaimat tundi tahad näha?\n"))
+    output()
